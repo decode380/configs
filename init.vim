@@ -1,3 +1,4 @@
+set number
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
@@ -10,6 +11,9 @@ filetype indent on
 syntax on
 " Add numbers to each line on the left-hand side.
 set number
+set numberwidth=5
+set relativenumber
+highlight LineNr ctermfg=DarkGrey
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
 " Highlight cursor line underneath the cursor vertically.
@@ -49,12 +53,15 @@ set history=1000
 set wildmenu
 " Make wildmenu behave like similar to Bash completion.
 set wildmode=list:longest
-" There are certain files that we would never want to edit with Vim.
-" Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-"so ./.vim/plugins.vim
-"so ./.vim/mappings.vim
-"so ./.vim/vimscript.vim
-"so ./.vim/statusbar.vim
+set encoding=utf-8
+
+so ~/configs/nvim/plugins.vim
+so ~/configs/nvim/mappings.vim
+so ~/configs/nvim/coc.vim
+
+let g:gruvbox_contrast_dark = "hard"
+colorscheme gruvbox
+set background=dark
+set laststatus=2
 
