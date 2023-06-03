@@ -74,6 +74,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+[[ $TERM != "screen" ]] && exec tmux
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -99,3 +101,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+  alias n="nvim"

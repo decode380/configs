@@ -1,0 +1,7 @@
+ln -s ~/configs/.zshrc ~/.zshrc
+ln -s ~/configs/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/configs/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -s ~/configs/tmux/.tmux.conf ~/.tmux.conf
+Install Vim Plug
+Install python3 - pip3
+CheckHealth
