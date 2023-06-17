@@ -1,0 +1,6 @@
+prev install tmux tpm https://github.com/tmux-plugins/tpm
+ln -s ~/configs/tmux/.tmux.conf ~/.tmux.conf
+open tmux and install plugins with tpm:
+  prefix + I <- install
+  prefix + alt + u <- remove plugins
+  prefix + U <- updateplugins

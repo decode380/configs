@@ -1,0 +1,3 @@
+instal nvimchad
+ln -s ~/configs/nvim/custom ~/.config/nvim/lua/custom
+install all LS with Mason :MasonInstall ls_name (listed in custom/configs/lspconfig.lua servers array, check LS name in :Mason)
