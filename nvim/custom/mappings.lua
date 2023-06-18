@@ -2,7 +2,7 @@ local M = {}
 
 M.general_custom = {
   i = {
-    ["ii"] = {"<Esc>", "Escape insert mode"},
+    ["jk"] = {"<Esc>", "Escape insert mode"},
   },
   n = {
     ["o"] = {"o<Esc>", "Escape insert new line down"},
