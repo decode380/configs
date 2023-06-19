@@ -64,6 +64,7 @@ theme.menu_bg_normal="#1e252d"
 theme.menu_fg_normal="#ffffff"
 theme.menu_bg_focus="#8ca1a6" -- You can add as many variables as
 theme.menu_fg_focus="#1e252d" -- you wish and access them by using
+theme.menu_border_width=dpi(0)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
