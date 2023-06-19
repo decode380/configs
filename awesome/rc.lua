@@ -17,6 +17,10 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -111,6 +115,19 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+local cw = calendar_widget({
+    theme = 'nord',
+    placement = 'top_right',
+    start_sunday = true,
+    radius = 8,
+-- with customized next/previous (see table above)
+    previous_month_button = 1,
+    next_month_button = 3,
+})
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -254,7 +271,19 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+            -- cpu_widget(),
+            cpu_widget({
+                  width = 70,
+                  step_width = 2,
+                  step_spacing = 0,
+                  color = '#434c5e'
+            }),
+            volume_widget{
+                widget_type = 'arc',
+                mute_color = "#ff0000"
+            },
             mytextclock,
+            logout_menu_widget(),
             s.mylayoutbox,
         },
     }
@@ -461,7 +490,12 @@ for i = 1, 9 do
                           end
                       end
                   end,
-                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+                  {description = "toggle focused client on tag #" .. i, group = "tag"}),
+        awful.key({}, "Print", function()
+            awful.util.spawn_with_shell("sleep 0.5 && scrot -s $HOME/Screenshots/%Y-%m-%d-%T.png")
+            end),
+        awful.key({ modkey }, "]", function() volume_widget:inc(5) end),
+        awful.key({ modkey }, "[", function() volume_widget:dec(5) end)
     )
 end
 
