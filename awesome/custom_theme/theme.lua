@@ -22,9 +22,9 @@ theme.fg_focus      = "#1e252d"
 theme.taglist_shape_border_width = 10
 
 theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(3)
-theme.border_normal = "#000000"
-theme.border_focus  = "#8ca1a6"
+theme.border_width  = dpi(1)
+theme.border_normal = "#42414d"
+theme.border_focus  = "#00ddff"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -40,7 +40,7 @@ theme.border_focus  = "#8ca1a6"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(5)
+local taglist_square_size = dpi(0)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )

@@ -20,7 +20,6 @@ require("awful.hotkeys_popup.keys")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -110,7 +109,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
@@ -269,8 +267,6 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
             -- cpu_widget(),
             cpu_widget({
                   width = 70,
@@ -278,11 +274,8 @@ awful.screen.connect_for_each_screen(function(s)
                   step_spacing = 0,
                   color = '#434c5e'
             }),
-            volume_widget{
-                widget_type = 'arc',
-                mute_color = "#ff0000"
-            },
             mytextclock,
+            wibox.widget.systray(),
             logout_menu_widget(),
             s.mylayoutbox,
         },
@@ -493,9 +486,7 @@ for i = 1, 9 do
                   {description = "toggle focused client on tag #" .. i, group = "tag"}),
         awful.key({}, "Print", function()
             awful.util.spawn_with_shell("sleep 0.5 && scrot -s $HOME/Screenshots/%Y-%m-%d-%T.png")
-            end),
-        awful.key({ modkey }, "]", function() volume_widget:inc(5) end),
-        awful.key({ modkey }, "[", function() volume_widget:dec(5) end)
+            end)
     )
 end
 
@@ -638,3 +629,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.spawn.with_shell("nm-applet")
+-- awful.spawn.with_shell("$HOME/.config/awesome/launch.sh")
