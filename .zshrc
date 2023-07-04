@@ -109,12 +109,12 @@ source $ZSH/oh-my-zsh.sh
 alias cat=bat
 alias ls=lsd
 alias n=nvim
-alias printnotes="bat ~/Documents/text.txt"
+alias printnotes="bat ~/text.txt"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/nvm/init-nvm.sh
 setxkbmap us -variant intl

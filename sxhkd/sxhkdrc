@@ -6,13 +6,21 @@
 super + Return
 	alacritty
 
-# terminal emulator
-super + b
-	firefox
-
 # program launcher
 super + @space
 	rofi -show run
+
+# screenshot
+Print
+	scrot -s ~/Pictures/Screenshots/
+
+# browser
+super + b
+	firefox
+
+# up/down volume
+super + {minus, equal}
+  pactl -- set-sink-volume 0 {-,+}10%
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -123,15 +131,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-#
-# custom
-#
-
-# up/down volume
-super + {minus, equal}
-  pactl -- set-sink-volume 0 {-,+}10%
-
-# screenshot
-Print
-  scrot -s ~/Pictures/Screenshots/
