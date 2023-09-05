@@ -16,6 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,6 +111,8 @@ alias cat=bat
 alias ls=lsd
 alias n=nvim
 alias printnotes="bat ~/text.txt"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -118,3 +121,5 @@ alias printnotes="bat ~/text.txt"
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/nvm/init-nvm.sh
 setxkbmap us -variant intl
+
+PS1='%~: '
