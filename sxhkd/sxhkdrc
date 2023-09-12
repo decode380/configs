@@ -16,7 +16,7 @@ Print
 
 # browser
 super + b
-	firefox
+	firefox -P
 
 # up/down volume
 super + {minus, equal}

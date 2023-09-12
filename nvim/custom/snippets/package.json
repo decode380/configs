@@ -1,0 +1,13 @@
+{
+	"name": "vscode-format-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"csharp"
+				],
+				"path": "./vscode/csharp.json"
+			}		
+    ]
+	}
+}

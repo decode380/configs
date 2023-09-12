@@ -1,0 +1,60 @@
+{
+	"Generic class and namespace": {
+		"prefix": "gnsclass",
+		"body": [
+			"using System;",
+			"using System.Collections.Generic;",
+			"using System.Linq;",
+			"using System.Text;",
+			"using Microsoft.Threading;",
+			"using Microsoft.Threading.Tasks;",
+      "",
+      "namespace ${1:MyNameSpace}",
+      "{",
+      "",
+      "   public class ${2:MyClass}",
+      "   {",
+      "     public ${2}()",
+      "     {",
+      "     }",
+      "     ${3}",
+      "   }",
+      "",
+      "}"
+		]
+	},
+	"Generic controller": {
+		"prefix": "gcont",
+		"body": [
+      "using Microsoft.AspNetCore.Mvc;",
+      "",
+      "namespace ${1:MyNameSpace}",
+      "{",
+      "  [ApiVersion(\"1.0\")]",
+      "  public abstract class ${MyClass}: BaseApiController",
+      "  {",
+      "    // [HttpGet]",
+      "    // public async Task<IActionResult> Get(Command cmd){",
+      "    //   return Ok(await Mediator.Send(cmd));",
+      "    // }",
+      "",
+      "    // [HttpPost]",
+      "    // public async Task<IActionResult> Post(Command cmd){",
+      "    //   return Ok(await Mediator.Send(cmd));",
+      "    // }",
+      "",
+      "    // [HttpPut]",
+      "    // public async Task<IActionResult> Put(Command cmd){",
+      "    //   return Ok(await Mediator.Send(cmd));",
+      "    // }",
+      "",
+      "    // [HttpDelete]",
+      "    // public async Task<IActionResult> Delete(Command cmd){",
+      "    //   return Ok(await Mediator.Send(cmd));",
+      "    // }",
+      "  }",
+      "",
+      "}"
+		]
+	}
+}
