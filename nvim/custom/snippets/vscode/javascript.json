@@ -1,0 +1,12 @@
+{	
+  "console.log": {
+		"prefix": "clg",
+		"body": ["console.log($1);"],
+		"description": "console.log\n"
+	},
+  "lambda.func": {
+		"prefix": "lmb",
+		"body": ["($1) => {$2}"],
+		"description": "lambda function"
+	}
+}

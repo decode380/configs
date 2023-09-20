@@ -7,6 +7,12 @@
 					"csharp"
 				],
 				"path": "./vscode/csharp.json"
+			},
+			{
+				"language": [
+					"javascript"
+				],
+				"path": "./vscode/javascript.json"
 			}		
     ]
 	}

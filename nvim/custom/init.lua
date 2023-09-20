@@ -1,6 +1,6 @@
-vim.api.nvim_create_user_command('CtmInit', ':e ~/.config/nvim/lua/custom/init.lua', {})
-vim.api.nvim_create_user_command('CtmPlug', ':e ~/.config/nvim/lua/custom/plugins.lua', {})
-vim.api.nvim_create_user_command('CtmLsp', ':e ~/.config/nvim/lua/custom/configs/lspconfig.lua', {})
 vim.g.vscode_snippets_path = "~/.config/nvim/lua/custom/snippets"
 vim.opt.foldmethod = "marker"
+vim.wo.wrap = false
+vim.wo.relativenumber = true
+vim.opt.colorcolumn = "80"
 

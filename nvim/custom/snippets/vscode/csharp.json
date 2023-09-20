@@ -2,24 +2,14 @@
 	"Generic class and namespace": {
 		"prefix": "gnsclass",
 		"body": [
-			"using System;",
-			"using System.Collections.Generic;",
-			"using System.Linq;",
-			"using System.Text;",
-			"using Microsoft.Threading;",
-			"using Microsoft.Threading.Tasks;",
+      "namespace ${1:MyNameSpace};",
       "",
-      "namespace ${1:MyNameSpace}",
+      "public class ${2:MyClass}",
       "{",
-      "",
-      "   public class ${2:MyClass}",
+      "   public ${2}()",
       "   {",
-      "     public ${2}()",
-      "     {",
-      "     }",
-      "     ${3}",
+      "      ${3}",
       "   }",
-      "",
       "}"
 		]
 	},

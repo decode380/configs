@@ -7,8 +7,14 @@ M.general_custom = {
   n = {
     ["o"] = {"o<Esc>", "Escape insert new line down"},
     ["O"] = {"O<Esc>", "Escape insert new line up"},
-    ["<C-Left"] = {"<C-W 10 >", ""}
+    ["<leader>;"] = {"A;<esc>", "insert ; in end of line"},
+    ["<leader>'"] = {"<cmd> s/\"/'/g <CR>", "change \" for ' in line"},
+    ["<M-Left>"] = {"zh", "Horizontal scroll left"},
+    ["<M-Right>"] = {"zl", "Horizontal scroll right"},
   },
+  v = {
+    -- ["<leader>'"] = {"<cmd> '<,'>s/\"/'/g <CR>", "change \" for ' in line"},
+  }
 }
 
 M.window = {
